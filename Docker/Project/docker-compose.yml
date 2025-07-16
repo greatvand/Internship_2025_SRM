@@ -1,0 +1,11 @@
+services:
+  api:
+    build: ./api
+    image: api:latest
+    command: npm start
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - HOST="http://realworld.com"
